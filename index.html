@@ -4,6 +4,13 @@
 <title>CSS Template</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+
 <style>
 * {
   box-sizing: border-box;
@@ -36,6 +43,10 @@ nav ul {
   list-style-type: none;
   padding: 0;
 }
+
+ div#map {
+            min-height: 360px;
+        }
 
 article {
   float: left;
@@ -81,11 +92,7 @@ footer {
 
 <section>
   <nav>
-    <ul>
-      <li><a href="#">London</a></li>
-      <li><a href="#">Paris</a></li>
-      <li><a href="#">Tokyo</a></li>
-    </ul>
+      <div id="map"></div>
   </nav>
   
   <article>
@@ -98,6 +105,21 @@ footer {
 <footer>
   <p>Footer</p>
 </footer>
+
+<script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 3,
+                center: {
+                    lat: 46.619261,
+                    lng: -33.134766
+                }
+            });
+        }
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgnd9d8p1-CIf5dcrwfsIiHKa-93NMQys&callback=initMap"></script>
+
 
 </body>
 </html>
